@@ -148,14 +148,14 @@
                     <navigationItem key="navigationItem" title="Title" id="z9b-u2-D5W">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="FS3-p2-Jxo">
                             <connections>
-                                <action selector="saveButtonPressed:" destination="WI2-wJ-dAU" id="Hn0-MD-ZzX"/>
+                                <action selector="saveButtonPressed:" destination="WI2-wJ-dAU" id="MSV-mW-GrA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="datePicker" destination="7E5-I9-3ye" id="wtN-tf-NOI"/>
-                        <outlet property="nameTextField" destination="QoX-Lu-hGg" id="08d-P5-vgO"/>
-                        <outlet property="notesTextView" destination="0Ff-ma-Dqn" id="qTh-Rk-BkH"/>
+                        <outlet property="datePicker" destination="7E5-I9-3ye" id="Fzb-rx-wmS"/>
+                        <outlet property="nameTextField" destination="QoX-Lu-hGg" id="FDo-Sr-3iH"/>
+                        <outlet property="notesTextView" destination="0Ff-ma-Dqn" id="dSx-91-RHL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bh8-ef-2je" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -176,7 +176,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFU-DR-uVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-278" y="153"/>
+            <point key="canvasLocation" x="-785" y="108"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

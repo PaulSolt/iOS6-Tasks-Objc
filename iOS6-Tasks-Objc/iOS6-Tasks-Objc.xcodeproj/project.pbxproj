@@ -16,6 +16,7 @@
 		BDEDFF0422DF831900CDBB95 /* LSITask.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEDFF0322DF831900CDBB95 /* LSITask.m */; };
 		BDEDFF0722DF8A1600CDBB95 /* LSITasksController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEDFF0622DF8A1600CDBB95 /* LSITasksController.m */; };
 		BDEDFF0A22DF92D400CDBB95 /* NSString+DuplicateString.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEDFF0922DF92D400CDBB95 /* NSString+DuplicateString.m */; };
+		BDEDFF0D22DF95AF00CDBB95 /* LSITaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEDFF0C22DF95AF00CDBB95 /* LSITaskDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		BDEDFF0622DF8A1600CDBB95 /* LSITasksController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSITasksController.m; sourceTree = "<group>"; };
 		BDEDFF0822DF92D400CDBB95 /* NSString+DuplicateString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+DuplicateString.h"; sourceTree = "<group>"; };
 		BDEDFF0922DF92D400CDBB95 /* NSString+DuplicateString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+DuplicateString.m"; sourceTree = "<group>"; };
+		BDEDFF0B22DF95AF00CDBB95 /* LSITaskDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSITaskDetailViewController.h; sourceTree = "<group>"; };
+		BDEDFF0C22DF95AF00CDBB95 /* LSITaskDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSITaskDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				BD3398D622DF81D300323F6C /* ViewController.m */,
 				BDEDFF0522DF8A1600CDBB95 /* LSITasksController.h */,
 				BDEDFF0622DF8A1600CDBB95 /* LSITasksController.m */,
+				BDEDFF0B22DF95AF00CDBB95 /* LSITaskDetailViewController.h */,
+				BDEDFF0C22DF95AF00CDBB95 /* LSITaskDetailViewController.m */,
 				BDEDFF0822DF92D400CDBB95 /* NSString+DuplicateString.h */,
 				BDEDFF0922DF92D400CDBB95 /* NSString+DuplicateString.m */,
 				BDEDFF0222DF831900CDBB95 /* LSITask.h */,
@@ -160,6 +165,7 @@
 				BD3398E222DF81D400323F6C /* main.m in Sources */,
 				BDEDFF0A22DF92D400CDBB95 /* NSString+DuplicateString.m in Sources */,
 				BD3398D422DF81D300323F6C /* AppDelegate.m in Sources */,
+				BDEDFF0D22DF95AF00CDBB95 /* LSITaskDetailViewController.m in Sources */,
 				BDEDFF0422DF831900CDBB95 /* LSITask.m in Sources */,
 				BDEDFF0722DF8A1600CDBB95 /* LSITasksController.m in Sources */,
 			);
