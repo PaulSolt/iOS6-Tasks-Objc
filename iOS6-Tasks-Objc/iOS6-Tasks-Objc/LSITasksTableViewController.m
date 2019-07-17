@@ -12,6 +12,8 @@
 
 @interface LSITasksTableViewController ()
 
+@property (nonatomic, readonly) NSDateFormatter *dateFormatter;
+
 @end
 
 @implementation LSITasksTableViewController
@@ -31,6 +33,17 @@
     return _tasksController;
 }
 
+@synthesize dateFormatter = _dateFormatter;
+- (NSDateFormatter *)dateFormatter {
+    if (!_dateFormatter) {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        _dateFormatter.dateStyle = NSDateFormatterShortStyle;
+        _dateFormatter.timeStyle = NSDateFormatterShortStyle;
+    }
+    return _dateFormatter;
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -44,7 +57,8 @@
     
     LSITask *task = self.tasksController.tasks[indexPath.row];
     cell.textLabel.text = task.name;
-    cell.detailTextLabel.text = task.dueDate.description;
+//    cell.detailTextLabel.text = task.dueDate.description;
+    cell.detailTextLabel.text = [self.dateFormatter stringFromDate:task.dueDate];
     
     return cell;
 }
@@ -58,17 +72,21 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        
+        // Get the task and remove it
+        LSITask *task = self.tasksController.tasks[indexPath.row];
+        [self.tasksController removeTask:task];
+        
+        // TODO: Why do all animations look the same???
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }  
 }
-*/
+
 
 #pragma mark - Navigation
 
