@@ -51,6 +51,8 @@
 
 - (void)addTask:(LSITask *)task {
     [_internalTasks addObject:task];
+    
+    // Upload to Firebase
 }
 
 - (void)removeTask:(LSITask *)task {

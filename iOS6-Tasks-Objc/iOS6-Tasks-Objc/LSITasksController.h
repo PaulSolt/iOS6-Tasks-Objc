@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 //- (void)init;  // Defined by NSObject, we don't need to redeclare it
 
 - (void)addTask:(LSITask *)task;
-
 - (void)removeTask:(LSITask *)task;
 
 - (void)cancelAllTasksNamed:(NSString *)taskName;

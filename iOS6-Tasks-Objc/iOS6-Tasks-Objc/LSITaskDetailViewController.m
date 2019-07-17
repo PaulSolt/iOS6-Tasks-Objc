@@ -7,6 +7,8 @@
 //
 
 #import "LSITaskDetailViewController.h"
+#import "LSITask.h"
+#import "LSITasksController.h"
 
 @interface LSITaskDetailViewController ()
 
@@ -22,11 +24,51 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self updateViews];
+}
+
+// custom setter for task (set)
+- (void)setTask:(LSITask *)task {
+    if (task != _task) {
+        _task = task;
+        [self updateViews];
+    }
+}
+
+- (void)updateViews {
+    if (!self.isViewLoaded || !self.task) { return; }
+    
+    self.title = self.task.name;
+    
+    self.nameTextField.text = self.task.name;
+    self.notesTextView.text = self.task.note;
+    self.datePicker.date = self.task.dueDate;
+    
 }
 
 // Actions  (id = AnyObject)
 - (IBAction)saveButtonPressed:(id)sender {
+    BOOL isNewTask = self.task == nil;
     
+    LSITask *task = isNewTask ? [[LSITask alloc] init] : self.task;
+    
+//    LSITask *task = nil;
+//    if (isNewTask) {
+//        task = [[LSITask alloc] init];
+//    } else {
+//        task = self.task;
+//    }
+    
+    // Get the user's input
+    task.name = self.nameTextField.text;
+    task.note = self.notesTextView.text;
+    task.dueDate = self.datePicker.date;
+    
+    if (isNewTask) {
+        [self.tasksController addTask:task];
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LSITaskDetailViewController : UIViewController
 
 @property LSITasksController *tasksController;
-@property LSITask *task;
+@property (nonatomic) LSITask *task;
 
 
 @end

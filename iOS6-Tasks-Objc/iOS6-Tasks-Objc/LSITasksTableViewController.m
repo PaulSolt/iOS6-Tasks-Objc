@@ -24,6 +24,13 @@
 
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
+
 // Lazy property
 - (LSITasksController *)tasksController {
 //    if (_tasksController == nil) {
@@ -108,6 +115,7 @@
     } else if ([segue.identifier isEqualToString:@"ShowCreateTask"]) {
         LSITaskDetailViewController *detailVC = segue.destinationViewController;
         detailVC.tasksController = self.tasksController;
+//        detailVC.task = nil; // task will be nil by default if we don't initalize it
     }
 }
 
