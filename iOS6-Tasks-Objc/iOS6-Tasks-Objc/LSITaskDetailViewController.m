@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self updateViews];
 }
 
@@ -46,29 +46,54 @@
     
 }
 
+
+
 // Actions  (id = AnyObject)
+
+/*- (IBAction)saveButtonPressed:(id)sender {
+ BOOL isNewTask = self.task == nil;
+ 
+ LSITask *task = isNewTask ? [[LSITask alloc] init] : self.task;
+ 
+ //    LSITask *task = nil;
+ //    if (isNewTask) {
+ //        task = [[LSITask alloc] init];
+ //    } else {
+ //        task = self.task;
+ //    }
+ 
+ // Get the user's input
+ task.name = self.nameTextField.text;
+ task.note = self.notesTextView.text;
+ task.dueDate = self.datePicker.date;
+ 
+ if (isNewTask) {
+ [self.tasksController addTask:task];
+ }
+ 
+ [self.navigationController popViewControllerAnimated:YES];
+ } */
+
 - (IBAction)saveButtonPressed:(id)sender {
-    BOOL isNewTask = self.task == nil;
-    
-    LSITask *task = isNewTask ? [[LSITask alloc] init] : self.task;
-    
-//    LSITask *task = nil;
-//    if (isNewTask) {
-//        task = [[LSITask alloc] init];
-//    } else {
-//        task = self.task;
-//    }
-    
-    // Get the user's input
-    task.name = self.nameTextField.text;
-    task.note = self.notesTextView.text;
-    task.dueDate = self.datePicker.date;
-    
+    [self saveTask:self.task];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)saveTask:(LSITask *)task {
+    BOOL isNewTask = !task;
+    if (isNewTask) {
+        task = [[LSITask alloc] init];
+    }
+    [self updateTaskFromUserInput:task];
     if (isNewTask) {
         [self.tasksController addTask:task];
     }
-    
-    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)updateTaskFromUserInput:(LSITask *)task {
+    task.name = self.nameTextField.text;
+    task.note = self.notesTextView.text;
+    task.dueDate = self.datePicker.date;
 }
 
 
