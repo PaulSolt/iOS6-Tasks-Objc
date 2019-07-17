@@ -56,6 +56,14 @@
     NSLog(@"Duplicate: %@", rowRow);
     
     NSLog(@"%@", [rowRow lsi_duplicateString]);
+    
+    // Calling methods on nil values will not do anything
+    // if it is returning a value it will be nil or 0 or NO
+    NSString *name = nil;
+    
+    NSLog(@"Length: %lu", [name length]);
+    [name writeToFile:@"/path/to/file" atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    
 }
 
 
