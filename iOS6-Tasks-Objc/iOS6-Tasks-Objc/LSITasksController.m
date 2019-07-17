@@ -30,8 +30,17 @@
     self = [super init];
     if (self) {
         _internalTasks = [[NSMutableArray alloc] init];
+        
+        [self addTestData];
     }
     return self;
+}
+
+- (void)addTestData {
+    LSITask *task1 = [[LSITask alloc] initWithName:@"Take out the trash" note:@"It smells in here!" dueDate:[NSDate dateWithTimeIntervalSinceNow:60*60]];
+    LSITask *task2 = [[LSITask alloc] initWithName:@"Buy produce" note:@"Go to the farmers market and get fresh veggies!" dueDate:[NSDate date]];
+    [self addTask:task1];
+    [self addTask:task2];
 }
 
 - (NSArray *)tasks {

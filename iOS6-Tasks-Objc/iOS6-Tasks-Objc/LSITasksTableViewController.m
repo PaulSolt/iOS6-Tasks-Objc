@@ -42,7 +42,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    LSITask *task = self.tasksController.tasks[indexPath.row];
+    cell.textLabel.text = task.name;
+    cell.detailTextLabel.text = task.dueDate.description;
     
     return cell;
 }
