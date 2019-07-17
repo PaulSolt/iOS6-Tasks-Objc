@@ -9,6 +9,7 @@
 #import "LSITasksTableViewController.h"
 #import "LSITasksController.h"
 #import "LSITask.h"
+#import "LSITaskDetailViewController.h"
 
 @interface LSITasksTableViewController ()
 
@@ -90,10 +91,24 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+    // ShowTaskDetail = show an existing task (and save it)
+    // ShowCreateTask = create a new task (and save it)
+    
+    if ([segue.identifier isEqualToString:@"ShowTaskDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        LSITask *task = self.tasksController.tasks[indexPath.row];
+        
+        // Cast the destination segue controller to our custom type
+        LSITaskDetailViewController *detailVC = segue.destinationViewController;
+        detailVC.tasksController = self.tasksController;
+        detailVC.task = task;
+        
+    } else if ([segue.identifier isEqualToString:@"ShowCreateTask"]) {
+        LSITaskDetailViewController *detailVC = segue.destinationViewController;
+        detailVC.tasksController = self.tasksController;
+    }
 }
 
 
