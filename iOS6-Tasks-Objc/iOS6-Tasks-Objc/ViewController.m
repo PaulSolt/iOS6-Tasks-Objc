@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "LSITask.h"
+#import "LSITasksController.h"
+#import "NSString+DuplicateString.h"
 
 @interface ViewController ()
 
@@ -29,6 +31,31 @@
     
     task.name = @"Walk Row";
     [task setName:@"Run 1 mile with Row"];
+    
+    LSITasksController *controller = [[LSITasksController alloc] init];
+    
+    // Don't do this:
+    // controller = LSITasksController.alloc.init;
+    
+    NSLog(@"Tasks: %lu", controller.tasks.count);
+    
+    [controller cancelAllTasksNamed:@"Wash Dishes"];
+    
+    // Calling methods we nest code
+    // Evaluated inside out
+    
+    [controller addTask:task];
+    
+    NSLog(@"Tasks: %lu", [[controller tasks] count]);
+    
+    NSLog(@"Tasks: %lu", [controller countOfTasks]);
+    
+    NSString *row = @"Row";
+    
+    NSString *rowRow = [row lsi_duplicateString];
+    NSLog(@"Duplicate: %@", rowRow);
+    
+    NSLog(@"%@", [rowRow lsi_duplicateString]);
 }
 
 

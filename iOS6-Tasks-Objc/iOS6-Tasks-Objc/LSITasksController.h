@@ -25,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)removeTask:(LSITask *)task;
 
+- (void)cancelAllTasksNamed:(NSString *)taskName;
+
+- (NSUInteger)countOfTasks;
 
 @end
 

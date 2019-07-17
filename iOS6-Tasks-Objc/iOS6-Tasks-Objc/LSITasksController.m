@@ -40,4 +40,22 @@
     return [_internalTasks copy];
 }
 
+- (void)addTask:(LSITask *)task {
+    [_internalTasks addObject:task];
+}
+
+- (void)removeTask:(LSITask *)task {
+    [_internalTasks removeObject:task];
+}
+
+- (void)cancelAllTasksNamed:(NSString *)taskName {
+    NSLog(@"Canceling all tasks named: %@", taskName);
+    // TODO: cancel all the tasks
+    // for loop and test each name and then remove it
+    // if it matches
+}
+
+- (NSUInteger)countOfTasks {
+    return [_internalTasks count];
+}
 @end
