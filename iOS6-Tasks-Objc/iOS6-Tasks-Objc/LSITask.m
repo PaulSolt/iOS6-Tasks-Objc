@@ -24,5 +24,20 @@
     return self;
 }
 
+// Setter (set)
+@synthesize name = _name;   // The system will autocreate this using _variableName
+- (void)setName:(NSString *)name {
+    _name = name;
+    NSLog(@"You set my name to: \"%@\"", name);
+}
+
+// Getter (get)
+- (NSString *)name {
+    return _name;
+}
+
+
+
+
 
 @end
